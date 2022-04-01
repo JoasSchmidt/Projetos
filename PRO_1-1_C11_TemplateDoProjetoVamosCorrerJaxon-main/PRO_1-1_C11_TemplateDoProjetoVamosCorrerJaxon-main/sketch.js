@@ -14,12 +14,15 @@ function setup() {
     // Movendo o fundo 
     path = createSprite(200, 200)
     path.addImage(pathImg)
+    path.y = path.height/2
     path.velocityY = 4
     path.scale = 1.2
 
     //Criando menino que corre 
-    boy = createSprite(200, 200)
-    boy.addAnimation("running",boyImg)
+    boy = createSprite(200, 200, 20, 50)
+    boy.addAnimation(boyImg)
+    boy.scale=0.5
+
 
     // Criando Boundary (Limite) esquerdo  
     leftBoundary = createSprite(0, 0, 100, 800);
@@ -47,7 +50,7 @@ function draw() {
 
     //Reiniciar o fundo
     if (path.y < 0) {
-        path.y = path.width / 2;
+        path.y = path.height/2
     }
 
 

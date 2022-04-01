@@ -20,8 +20,8 @@ function setup() {
 
     //Criando menino que corre 
     boy = createSprite(200, 200, 20, 50)
-    boy.addAnimation(boyImg)
-    boy.scale=0.5
+    boy.addAnimation("run",boyImg)
+    boy.scale=0.1
 
 
     // Criando Boundary (Limite) esquerdo  
@@ -49,7 +49,8 @@ function draw() {
 
 
     //Reiniciar o fundo
-    if (path.y < 0) {
+    if (path.y < 400) {
+        path.y=0
         path.y = path.height/2
     }
 
